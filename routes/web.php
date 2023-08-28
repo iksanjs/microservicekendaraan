@@ -47,7 +47,13 @@ $router->group(['prefix'=>'api/kendaraan/stdealertowahanas'], function() use($ro
 
 $router->group(['prefix'=>'api/kendaraan/kendaraans'], function() use($router){
     $router->get('/', 'KendaraanController@index');
+    $router->get('/approvedkendaraan', 'KendaraanController@approvedkendaraan');
     $router->get('/{no_polisi}', 'KendaraanController@show');
+    $router->put('/{no_polisi}/updatestatusstock', 'KendaraanController@updatestatusstock');
     $router->put('/{no_polisi}/updatestatusproses', 'KendaraanController@updatestatusproses');
     $router->put('/{no_polisi}/updatestatusdisewa', 'KendaraanController@updatestatusdisewa');
+    $router->put('/{no_polisi}/updatestatusprosesst', 'KendaraanController@updatestatusprosesst');
+    $router->put('/{no_polisi}/updatestatusstreject', 'KendaraanController@updatestatusstreject');
+    $router->put('/{no_polisi}/updatestatusprosespengembalian', 'KendaraanController@updatestatusprosespengembalian');
+
 });
