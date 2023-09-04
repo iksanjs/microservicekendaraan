@@ -30,6 +30,12 @@ class KendaraanController extends Controller
         return response()->json([$kendaraans]);
     }
 
+    public function getstock()
+    {
+        $kendaraans = Kendaraan::where('status', 'Stock')->get();
+        return response()->json([$kendaraans]);
+    }
+
     public function show($no_polisi)
     {
         $kendaraans = Kendaraan::where('no_polisi', $no_polisi)->first();
